@@ -129,7 +129,14 @@ section.alt{background:var(--soft);border-top:var(--w) solid var(--ink);border-b
 .project p{font-size:16px}
 .project .tags{margin-top:auto;padding-top:6px}
 .project a{font-weight:600;text-underline-offset:4px}
-@media (max-width:760px){.projects{grid-template-columns:1fr}}
+.sub-h{font-size:20px;margin:0 0 18px;display:flex;align-items:center;gap:10px}
+.sub-h::before{content:"";width:12px;height:12px;border-radius:50%;border:var(--w) solid var(--ink)}
+.projects.builds{margin-bottom:56px}
+.projects.work{grid-template-columns:repeat(3,1fr)}
+.build h3{font-size:24px}
+.build .links{display:flex;flex-wrap:wrap;gap:18px;padding-top:4px}
+@media (max-width:960px){.projects.work{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.projects,.projects.work{grid-template-columns:1fr}}
 
 /* education */
 .edu{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -282,8 +289,27 @@ footer{border-top:var(--w) solid var(--ink)}
 
   <section id="projects">
     <div class="container">
-      <div class="section-head"><h2 class="section-title">Projects</h2><span class="ruler" aria-hidden="true"></span><p class="section-sub">A few pieces of work I’m proud of.</p></div>
-      <div class="projects">
+      <div class="section-head"><h2 class="section-title">Projects</h2><span class="ruler" aria-hidden="true"></span><p class="section-sub">Apps I’ve built and shipped, then highlights from work.</p></div>
+      <h3 class="sub-h">Things I’ve built</h3>
+      <div class="projects builds">
+        <article class="card project build fade">
+          <p class="where">Live app · Personal project</p>
+          <h3>Sparplan</h3>
+          <p>Ranks 66 Swedish and worldwide funds and shares by real risk, scored from five years of weekly prices on the EU’s official 1–7 risk scale, in SEK. Includes a lump-sum planner, a monthly-saving planner, a watchlist and saved plans, in Swedish or English.</p>
+          <p>It installs like an app and works offline. A GitHub Actions job refreshes the market data every weekday evening and publishes it automatically.</p>
+          <ul class="tags"><li>JavaScript</li><li>PowerShell</li><li>GitHub Actions</li><li>PWA</li></ul>
+          <div class="links"><a href="https://endamcgoldrick.github.io/sparplan/" target="_blank" rel="noopener">Open the app →</a><a href="https://github.com/endamcgoldrick/sparplan" target="_blank" rel="noopener">Code on GitHub →</a></div>
+        </article>
+        <article class="card project build fade">
+          <p class="where">In development · Personal project</p>
+          <h3>Le Chéile</h3>
+          <p>A calendar for two people: your own private calendar plus a shared one you both edit. Google sign-in, live sync, invite by a 6-character code, and each other’s busy times shown without revealing details.</p>
+          <p>Flags clashes, finds a time that suits you both, and suggests blocks toward weekly goals. Installs on iPhone and Android, works offline, and deploys from GitHub to Firebase automatically.</p>
+          <ul class="tags"><li>Firebase</li><li>Cloud Firestore</li><li>Google sign-in</li><li>PWA</li></ul>
+        </article>
+      </div>
+      <h3 class="sub-h">Highlights from work</h3>
+      <div class="projects work">
         <article class="card project fade">
           <p class="where">Vastint</p>
           <h3>Laptops that arrive ready</h3>
@@ -301,12 +327,6 @@ footer{border-top:var(--w) solid var(--ink)}
           <h3>Office UPS replacement</h3>
           <p>Coordinated electrical and infrastructure vendors as primary contact, ran the controlled shutdown and restart, and validated every IT system afterwards.</p>
           <ul class="tags"><li>Infrastructure</li><li>Vendors</li><li>Power</li></ul>
-        </article>
-        <article class="card project fade">
-          <p class="where">Side project</p>
-          <h3>Sparplan</h3>
-          <p>A page built with Claude Code that ranks 51 funds and shares available to Swedish savers by how much their prices really swing, using five years of weekly prices.</p>
-          <ul class="tags"><li>Data</li><li>Automation</li><li>Claude Code</li></ul>
         </article>
       </div>
     </div>
