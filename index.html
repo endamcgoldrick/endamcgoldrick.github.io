@@ -3,372 +3,502 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Enda McGoldrick · Portfolio</title>
-<meta name="description" content="Enda McGoldrick, IT support engineer: Microsoft 365, Intune, Autopilot and Entra ID. Open to new roles in Stockholm.">
+<title>Enda McGoldrick · IT Support Engineer</title>
+<meta name="description" content="Enda McGoldrick, IT support engineer for Microsoft 365, Intune and Entra ID. Relocating to Stockholm and open to new roles.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Enda McGoldrick · IT Support Engineer">
-<meta property="og:description" content="Microsoft 365, Intune, Autopilot and Entra ID. Open to new roles in Stockholm.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23fbfaf6' stroke='%23141414' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23141414'/%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com">
+<meta property="og:description" content="Microsoft 365, Intune and Entra ID. Relocating to Stockholm and open to new roles.">
+<meta property="og:url" content="https://endamcgoldrick.github.io/">
+<meta property="og:image" content="https://endamcgoldrick.github.io/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://endamcgoldrick.github.io/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Enda McGoldrick","jobTitle":"IT Support Engineer","url":"https://endamcgoldrick.github.io/","email":"mailto:mcgoldrickenda@gmail.com","sameAs":["https://www.linkedin.com/in/enda-mcgoldrick","https://github.com/endamcgoldrick"],"knowsAbout":["Microsoft 365","Microsoft Intune","Windows Autopilot","Microsoft Entra ID","Microsoft Defender"],"hasCredential":{"@type":"EducationalOccupationalCredential","name":"CompTIA Security+"}}</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b1b2b'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23fecc02'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-/* Ink on paper, taken from the line drawing: one line weight (2px), ringed circles, ruler ticks. */
+/* Stockholm: pale cool ground, Baltic navy ink and field, flag yellow on actions and the next stop only. */
 :root{
-  --paper:#fbfaf6; --soft:#f1efe8; --ink:#141414; --muted:#55524b;
-  --w:2px;
-  --head:"Space Grotesk",system-ui,sans-serif;
-  --body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --ground:#eef1f0; --step:#e2e7e6; --ink:#0b1b2b; --soft:#3c4b5a;
+  --field:#0b1b2b; --on-field:#eef1f0; --on-field-soft:#b4c0cb;
+  --accent:#fecc02; --on-accent:#0b1b2b;
+  --font:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --m:clamp(20px,4vw,56px); --gap:clamp(120px,14vw,200px);
+  --ease:cubic-bezier(.2,.7,.2,1);
   color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#121211;--soft:#1b1b19;--ink:#f1efe8;--muted:#aaa69c;color-scheme:dark}}
-:root[data-theme="dark"]{--paper:#121211;--soft:#1b1b19;--ink:#f1efe8;--muted:#aaa69c;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#0f1720; --step:#16212c; --ink:#e8edf1; --soft:#a9b6c2;
+  --field:#e8edf1; --on-field:#0b1b2b; --on-field-soft:#3c4b5a; color-scheme:dark}}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3,p,ul{margin:0}
-h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 18px/1.55 var(--font);-webkit-font-smoothing:antialiased;overflow-x:clip}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:.95;text-wrap:balance}
+p,li,dd{text-wrap:pretty}
 a{color:inherit}
-:focus-visible{outline:var(--w) dashed var(--ink);outline-offset:4px}
-.container{max-width:1080px;margin:0 auto;padding:0 20px}
+img{display:block;max-width:100%;height:auto}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+::selection{background:var(--accent);color:var(--on-accent)}
+.wrap{padding-inline:var(--m);max-width:1480px;margin-inline:auto}
 
-/* the drawing */
-.linework{display:block;width:100%;height:auto;mix-blend-mode:multiply}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .linework{filter:invert(1);mix-blend-mode:screen}}
-:root[data-theme="dark"] .linework{filter:invert(1);mix-blend-mode:screen}
+.skip{position:absolute;left:16px;top:-80px;z-index:30;background:var(--accent);color:var(--on-accent);padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+/* bar */
+.bar{position:sticky;top:0;z-index:20;background:var(--ground)}
+.bar .wrap{display:flex;align-items:center;gap:32px;min-height:72px}
+.wordmark{font-weight:800;font-size:20px;letter-spacing:-.03em;text-decoration:none;margin-right:auto}
+.bar nav{display:flex;gap:28px}
+.bar nav a{text-decoration:none;font-weight:500;color:var(--soft);transition:color .2s}
+.bar nav a:hover{color:var(--ink)}
+@media (max-width:820px){.bar nav{display:none}}
 
-/* nav */
-header{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:var(--w) solid var(--ink)}
-header .container{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
-.logo{display:flex;align-items:center;gap:10px;font-family:var(--head);font-weight:700;font-size:19px;text-decoration:none}
-.ring{width:22px;height:22px;border-radius:50%;border:var(--w) solid var(--ink);display:grid;place-items:center}
-.ring::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--ink)}
-nav ul{display:flex;gap:28px;list-style:none;padding:0}
-nav a{font-weight:500;font-size:15px;text-decoration:none;background:linear-gradient(var(--ink),var(--ink)) 0 100%/0 var(--w) no-repeat;padding-bottom:2px;transition:background-size .25s}
-nav a:hover{background-size:100% var(--w)}
-@media (max-width:760px){nav{display:none}}
-
-/* buttons */
-.btn{display:inline-block;padding:12px 24px;font-weight:600;font-size:16px;text-decoration:none;border:var(--w) solid var(--ink);transition:transform .15s,box-shadow .15s,background-color .15s,color .15s}
-.btn:hover{transform:translate(-3px,-3px);box-shadow:3px 3px 0 var(--ink)}
-.btn:active{transform:none;box-shadow:none}
-.btn-primary{background:var(--ink);color:var(--paper)}
-.btn-outline{background:var(--paper)}
+/* buttons: square, one fill */
+.btn{display:inline-flex;align-items:center;min-height:54px;padding:0 26px;font-weight:700;font-size:17px;text-decoration:none;
+  background:var(--accent);color:var(--on-accent);transition:transform .2s var(--ease),background-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+.btn.small{min-height:44px;padding:0 18px;font-size:16px}
+.link{font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;transition:text-underline-offset .2s}
+.link:hover{text-underline-offset:9px}
 
 /* hero */
-.hero-art{max-width:1400px;margin:0 auto;border-bottom:var(--w) solid var(--ink);overflow:hidden}
-.hero-art .linework{min-height:180px;object-fit:cover;object-position:left center}
-.hero{position:relative;padding:0 0 88px}
-.hero-grid{display:grid;grid-template-columns:auto 1fr;gap:28px 40px;align-items:end}
-.avatar{align-self:start;z-index:1;width:132px;height:132px;margin-top:-66px;border-radius:50%;background:var(--paper);border:var(--w) solid var(--ink);display:grid;place-items:center;position:relative}
-.avatar::before{content:"";position:absolute;inset:9px;border-radius:50%;border:var(--w) solid var(--ink)}
-.avatar span{font-family:var(--head);font-weight:700;font-size:40px;letter-spacing:-1px}
-.hero h1{font-size:clamp(40px,6.4vw,72px);padding-top:28px}
-.hero .role{font-family:var(--head);font-size:clamp(19px,2.2vw,24px);font-weight:500;margin-top:6px}
-.hero-body{grid-column:1/-1;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end;margin-top:12px}
-.hero .intro{font-size:19px;max-width:560px}
-.hero .loc{margin-top:16px;display:inline-flex;align-items:center;gap:10px;font-weight:600}
-.hero .loc .ring{width:18px;height:18px}
-.hero .loc .ring::after{width:6px;height:6px}
-.hero .buttons{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
-@media (max-width:760px){
-  .hero-grid{grid-template-columns:1fr}
-  .avatar{width:108px;height:108px;margin-top:-54px}
-  .hero h1{padding-top:0}
-  .hero-body{grid-template-columns:1fr}
-  .hero .buttons{justify-content:flex-start}
-}
+.hero{padding-top:clamp(24px,4vw,56px)}
+.hero h1{font-size:clamp(3.4rem,10.4vw,10.5rem);letter-spacing:-.055em;line-height:.86;margin-left:-.04em}
+.hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);margin-top:clamp(28px,3vw,44px);align-items:start}
+.hero .lede{font-size:clamp(1.3rem,2vw,1.75rem);line-height:1.3;font-weight:500;letter-spacing:-.015em;max-width:30ch}
+.hero .actions{display:flex;flex-wrap:wrap;gap:24px;align-items:center;margin-top:32px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:20px 28px;margin-top:44px;max-width:520px}
+.facts b{display:block;font-size:clamp(2rem,3.4vw,2.9rem);font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.facts span{display:block;margin-top:6px;font-size:16px;color:var(--soft)}
+
+/* the route map (live thing) */
+.route{background:var(--step);padding:clamp(16px,2vw,28px)}
+.route svg{width:100%;height:auto;display:block;overflow:visible}
+.route .line{fill:none;stroke:var(--ink);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.route .next{fill:none;stroke:var(--ink);stroke-width:4;stroke-linecap:round;stroke-dasharray:2 12}
+.route .country{fill:var(--soft);font:500 15px var(--font);opacity:.7}
+.stop{cursor:pointer}
+.stop circle{fill:var(--ground);stroke:var(--ink);stroke-width:4;transition:r .25s var(--ease)}
+.stop text{fill:var(--ink);font:700 19px var(--font);letter-spacing:-.01em}
+.stop:hover circle,.stop:focus-visible circle{r:15}
+.stop:focus-visible{outline:none}
+.stop.on circle{fill:var(--ink)}
+.stop.sthlm circle{fill:var(--accent)}
+.stop.sthlm.on circle{fill:var(--accent);stroke-width:7}
+.readout{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;margin-top:18px;min-height:96px;align-items:baseline}
+.readout .yrs{font-weight:800;font-size:clamp(1.5rem,2.4vw,2rem);letter-spacing:-.03em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.readout .what{font-weight:700;font-size:19px}
+.readout .note{grid-column:2;color:var(--soft);font-size:16px}
+.stoplist{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.stoplist button{font:600 15px var(--font);color:var(--ink);background:var(--ground);border:0;padding:9px 14px;cursor:pointer;transition:background-color .2s,color .2s}
+.stoplist button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
 
 /* sections */
-section{padding:88px 0}
-section.alt{background:var(--soft);border-top:var(--w) solid var(--ink);border-bottom:var(--w) solid var(--ink)}
-.section-head{display:grid;grid-template-columns:auto 1fr;gap:6px 24px;align-items:end;margin-bottom:44px}
-.section-title{font-size:clamp(30px,4vw,42px)}
-.ruler{height:14px;align-self:center;border-bottom:var(--w) solid var(--ink);
-  background:repeating-linear-gradient(90deg,var(--ink) 0 var(--w),transparent var(--w) 12px) bottom/100% 8px no-repeat,
-             repeating-linear-gradient(90deg,var(--ink) 0 var(--w),transparent var(--w) 60px) bottom/100% 14px no-repeat}
-.section-sub{grid-column:1/-1;color:var(--muted)}
+section{padding-top:var(--gap)}
+.head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px clamp(32px,5vw,80px);align-items:end;margin-bottom:clamp(40px,5vw,72px)}
+.head h2{font-size:clamp(2.6rem,6vw,5.6rem)}
+.head p{font-size:clamp(1.15rem,1.6vw,1.4rem);line-height:1.4;max-width:46ch}
+@media (max-width:900px){.head{grid-template-columns:1fr}}
 
-/* about */
-.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
-.about-grid p+p{margin-top:16px}
-.facts{border:var(--w) solid var(--ink);background:var(--paper);list-style:none;padding:8px 24px}
-.facts li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;font-size:15px;border-bottom:1px dashed var(--ink)}
-.facts li:last-child{border-bottom:0}
-.facts b{font-weight:600}
-.facts span{color:var(--muted);text-align:right}
-@media (max-width:760px){.about-grid{grid-template-columns:1fr}}
+/* work: one chapter per stop */
+.stopwork{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,80px);padding-block:clamp(32px,4vw,56px)}
+.stopwork:nth-child(even){background:var(--step);margin-inline:calc(var(--m) * -1);padding-inline:var(--m)}
+.place h3{font-size:clamp(2.4rem,5vw,4.6rem)}
+.place p{margin-top:10px;font-size:18px;color:var(--soft);font-variant-numeric:tabular-nums}
+.role + .role{margin-top:36px}
+.role h4{margin:0;font-size:24px;letter-spacing:-.02em;line-height:1.2}
+.role .co{margin-top:2px;color:var(--soft)}
+.role ul{margin-top:12px;padding-left:20px}
+.role li{margin-top:7px}
+@media (max-width:900px){.stopwork{grid-template-columns:1fr}}
 
-/* cards */
-.card{border:var(--w) solid var(--ink);background:var(--paper);padding:26px;transition:transform .2s,box-shadow .2s}
-.card:hover{transform:translate(-4px,-4px);box-shadow:6px 6px 0 var(--ink)}
-.card h3{font-size:20px;display:flex;align-items:center;gap:10px}
-.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin-top:14px}
-.tags li{border:1.5px solid var(--ink);font-size:14px;font-weight:500;padding:3px 12px;border-radius:999px}
+/* projects: a full field of navy */
+.field{background:var(--field);color:var(--on-field);margin-top:var(--gap);padding-block:var(--gap)}
+.field section{padding-top:0}
+.field .head p,.field .muted{color:var(--on-field-soft)}
+.proj{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,80px);align-items:start}
+.proj + .proj{margin-top:clamp(80px,9vw,140px)}
+.proj.flip{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.proj.flip .shots{order:2}
+.shots{position:relative}
+.shots img{width:100%;background:#12161c}
+.shots .second{width:58%;margin:-22% 0 0 auto;position:relative;outline:8px solid var(--field)}
+.shots figcaption{margin-top:12px;font-size:15px;color:var(--on-field-soft)}
+.proj h3{font-size:clamp(2.4rem,5vw,4.4rem)}
+.proj .status{margin-top:12px;font-weight:700;font-size:17px}
+.proj p{margin-top:18px}
+.proj .stack{margin-top:18px;font-size:16px;color:var(--on-field-soft)}
+.proj .links{display:flex;flex-wrap:wrap;gap:16px 28px;margin-top:28px;align-items:center}
+@media (max-width:900px){.proj,.proj.flip{grid-template-columns:1fr}.proj.flip .shots{order:0}}
 
-.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-@media (max-width:860px){.skills{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.skills{grid-template-columns:1fr}}
+/* how I work */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.tabs button{font:700 18px var(--font);color:var(--ink);background:var(--step);border:0;min-height:48px;padding:0 22px;cursor:pointer;transition:background-color .2s,color .2s}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--ground)}
+.runbook[hidden]{display:none}
+.runbook{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,80px)}
+.runbook h3{font-size:clamp(2rem,3.6vw,3.2rem)}
+.runbook .out{margin-top:14px;font-size:20px;font-weight:700}
+.runbook ol{padding-left:28px;font-size:19px}
+.runbook li{padding:12px 0 12px 6px}
+.runbook li b{display:block}
+.runbook li::marker{font-weight:800}
+@media (max-width:900px){.runbook{grid-template-columns:1fr}}
 
-/* timeline */
-.timeline{position:relative;max-width:820px;padding-left:44px}
-.timeline::before{content:"";position:absolute;left:14px;top:8px;bottom:8px;border-left:var(--w) solid var(--ink)}
-.job{position:relative;padding-bottom:44px}
-.job:last-child{padding-bottom:0}
-.job::before{content:"";position:absolute;left:-44px;top:2px;width:26px;height:26px;border-radius:50%;border:var(--w) solid var(--ink);background:var(--soft)}
-.job::after{content:"";position:absolute;left:-35px;top:11px;width:8px;height:8px;border-radius:50%;background:var(--ink)}
-.job .date{font-family:var(--head);font-weight:700;font-size:15px}
-.job h3{font-size:22px;margin-top:2px}
-.job .co{color:var(--muted);font-size:15px}
-.job ul{margin-top:10px;padding-left:20px}
-.job li{margin-top:6px;font-size:16px}
-
-/* projects */
-.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.project{display:flex;flex-direction:column;gap:10px}
-.project .where{font-size:14px;color:var(--muted);font-weight:500}
-.project p{font-size:16px}
-.project .tags{margin-top:auto;padding-top:6px}
-.project a{font-weight:600;text-underline-offset:4px}
-.sub-h{font-size:20px;margin:0 0 18px;display:flex;align-items:center;gap:10px}
-.sub-h::before{content:"";width:12px;height:12px;border-radius:50%;border:var(--w) solid var(--ink)}
-.projects.builds{margin-bottom:56px}
-.projects.work{grid-template-columns:repeat(3,1fr)}
-.build h3{font-size:24px}
-.build .links{display:flex;flex-wrap:wrap;gap:18px;padding-top:4px}
-@media (max-width:960px){.projects.work{grid-template-columns:1fr 1fr}}
-@media (max-width:760px){.projects,.projects.work{grid-template-columns:1fr}}
-
-/* education */
-.edu{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.edu p{color:var(--muted);margin-top:8px;font-size:15px}
-@media (max-width:640px){.edu{grid-template-columns:1fr}}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px clamp(28px,4vw,64px)}
+.skills dt{font-weight:800;font-size:22px;letter-spacing:-.02em}
+.skills dd{margin-top:8px}
+.certs{margin-top:clamp(56px,6vw,88px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;background:var(--step);padding:clamp(24px,3vw,40px)}
+.certs b{display:block;font-size:20px;letter-spacing:-.01em}
+.certs span{display:block;margin-top:4px;color:var(--soft);font-size:16px}
+@media (max-width:900px){.skills,.certs{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.skills,.certs{grid-template-columns:1fr}}
 
 /* contact */
-.contact-box{border:var(--w) solid var(--ink);padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;background:var(--paper)}
-.contact-box h2{font-size:clamp(30px,4.4vw,46px)}
-.contact-box p{margin-top:10px;color:var(--muted);max-width:46ch}
-.contact-box .mail{display:inline-block;margin-top:14px;font-weight:600;font-size:18px;text-underline-offset:5px}
-.contact-box .buttons{display:flex;gap:12px;flex-wrap:wrap}
-@media (max-width:760px){.contact-box{grid-template-columns:1fr}}
+.contact{margin-top:var(--gap);background:var(--accent);color:var(--on-accent);padding-block:clamp(72px,9vw,128px)}
+.contact h2{font-size:clamp(2.6rem,6.4vw,6rem);max-width:14ch}
+.contact .row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px clamp(32px,5vw,80px);margin-top:36px;align-items:end}
+.contact p{font-size:20px;max-width:40ch}
+.contact .links{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center}
+.contact .btn{background:var(--on-accent);color:var(--accent)}
+.contact :focus-visible{outline-color:var(--on-accent)}
+@media (max-width:900px){.contact .row{grid-template-columns:1fr}}
 
-footer{border-top:var(--w) solid var(--ink)}
-.foot-art{max-width:1400px;margin:0 auto;height:120px;overflow:hidden}
-.foot-art .linework{transform:scaleX(-1);height:100%;object-fit:cover;object-position:center 70%}
-.foot-line{border-top:var(--w) solid var(--ink);padding:20px 0;font-size:14px;color:var(--muted)}
-.foot-line .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer .art{overflow:hidden;max-height:200px}
+footer .art img{width:100%;min-width:900px;mix-blend-mode:multiply}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer .art img{filter:invert(1);mix-blend-mode:screen}}
+footer .name{font-weight:800;font-size:clamp(3rem,11.6vw,12rem);letter-spacing:-.06em;line-height:.8;margin:24px 0 0 -.04em;white-space:nowrap}
+footer .small{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-block:28px;color:var(--soft);font-size:15px}
 
-/* motion */
-.js .fade{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
-.js .fade.in{opacity:1;transform:none}
-.hero-art .linework{animation:drift 30s ease-in-out infinite alternate}
-@keyframes drift{from{transform:scale(1.04) translateX(0)}to{transform:scale(1.04) translateX(-2%)}}
-@media (prefers-reduced-motion:reduce){.js .fade{opacity:1;transform:none;transition:none}.btn,.card{transition:none}.hero-art .linework{animation:none}}
+/* motion: content is visible without script */
+.js .rise{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0ms)}
+.js .rise.in{opacity:1;transform:none}
+.js .route .line{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);transition:stroke-dashoffset 2.2s var(--ease) .3s}
+.js .route.in .line{stroke-dashoffset:0}
+.shots img{transition:transform .6s var(--ease)}
+.proj:hover .shots img:first-child{transform:translateY(-6px)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rise{opacity:1;transform:none;transition:none}
+  .js .route .line{stroke-dasharray:none;stroke-dashoffset:0;transition:none}
+  .btn,.shots img{transition:none}
+}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+<a class="skip" href="#top">Skip to content</a>
 
-<header>
-  <div class="container">
-    <a class="logo" href="#top"><span class="ring" aria-hidden="true"></span>Enda McGoldrick</a>
+<header class="bar">
+  <div class="wrap">
+    <a class="wordmark" href="#top">Enda McGoldrick</a>
     <nav aria-label="Sections">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <a href="#work">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#how">How I work</a>
+      <a href="#skills">Skills</a>
     </nav>
+    <a class="btn small" href="#contact">Contact</a>
   </div>
 </header>
 
 <main id="top">
-  <div class="hero-art"><img class="linework" src="linework.png" width="1400" height="350" alt=""></div>
-  <div class="hero">
-    <div class="container hero-grid">
-      <div class="avatar" aria-hidden="true"><span>EM</span></div>
+  <div class="hero wrap">
+    <h1 class="rise">Enda McGoldrick</h1>
+    <div class="hero-grid">
       <div>
-        <h1>Enda McGoldrick</h1>
-        <p class="role">IT Support Engineer · Microsoft 365, Intune, Entra ID</p>
-      </div>
-      <div class="hero-body">
-        <div>
-          <p class="intro">I keep people productive and devices secure with Microsoft 365, Intune, Autopilot and Entra ID, backed by a background in data centre operations.</p>
-          <p class="loc"><span class="ring" aria-hidden="true"></span>Open to new roles in Stockholm</p>
+        <p class="lede rise">IT support engineer for Microsoft 365, Intune and Entra ID. I'm moving to Stockholm and looking for my next role there.</p>
+        <div class="actions rise">
+          <a class="btn" href="mailto:mcgoldrickenda@gmail.com?subject=Role%20enquiry">Email me</a>
+          <a class="link" href="Enda-McGoldrick-CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
         </div>
-        <div class="buttons">
-          <a class="btn btn-primary" href="mailto:mcgoldrickenda@gmail.com?subject=Role%20enquiry">Contact me</a>
-          <a class="btn btn-outline" href="Enda-McGoldrick-CV.pdf" target="_blank" rel="noopener">View CV (PDF)</a>
+        <dl class="facts rise">
+          <div><dt><b>240-280</b></dt><dd><span>employees supported, plus hundreds of guest users</span></dd></div>
+          <div><dt><b>10</b></dt><dd><span>offices and 13 entities across Europe</span></dd></div>
+          <div><dt><b>4+</b></dt><dd><span>years in IT infrastructure and support</span></dd></div>
+          <div><dt><b>Security+</b></dt><dd><span>CompTIA certified, valid to April 2027</span></dd></div>
+        </dl>
+      </div>
+
+      <figure class="route rise" aria-labelledby="routeCap">
+        <svg viewBox="0 0 640 345" role="img" aria-label="Map of the route from Sligo and Mayo to Dublin, Amsterdam and Stockholm">
+          <text class="country" x="20" y="320">Ireland</text>
+          <text class="country" x="290" y="338">Netherlands</text>
+          <text class="country" x="462" y="118">Sweden</text>
+          <path class="line" d="M69 234 C 58 240, 53 246, 53 248 C 70 258, 88 264, 112 266 C 190 300, 250 302, 328 300"/>
+          <path class="next" d="M328 300 C 420 280, 520 160, 584 58"/>
+          <g class="stop" data-i="0" tabindex="0" role="button" aria-label="Sligo"><circle cx="69" cy="234" r="11"/><text x="80" y="218">Sligo</text></g>
+          <g class="stop" data-i="1" tabindex="0" role="button" aria-label="Mayo"><circle cx="53" cy="248" r="11"/><text x="18" y="282">Mayo</text></g>
+          <g class="stop" data-i="2" tabindex="0" role="button" aria-label="Dublin"><circle cx="112" cy="266" r="11"/><text x="128" y="258">Dublin</text></g>
+          <g class="stop" data-i="3" tabindex="0" role="button" aria-label="Amsterdam"><circle cx="328" cy="300" r="11"/><text x="236" y="280">Amsterdam</text></g>
+          <g class="stop sthlm" data-i="4" tabindex="0" role="button" aria-label="Stockholm"><circle cx="584" cy="58" r="13"/><text x="492" y="40">Stockholm</text></g>
+        </svg>
+        <div class="readout" id="readout" aria-live="polite">
+          <span class="yrs">Next</span><span class="what">Stockholm: IT support and Microsoft 365 roles</span>
+          <span class="note">I'm moving there now. I'm an EU citizen, so I don't need a visa or work permit.</span>
+        </div>
+        <figcaption id="routeCap" class="stoplist-wrap">
+          <ul class="stoplist" aria-label="Choose a stop">
+            <li><button type="button" data-i="0" aria-pressed="false">Sligo</button></li>
+            <li><button type="button" data-i="1" aria-pressed="false">Mayo</button></li>
+            <li><button type="button" data-i="2" aria-pressed="false">Dublin</button></li>
+            <li><button type="button" data-i="3" aria-pressed="false">Amsterdam</button></li>
+            <li><button type="button" data-i="4" aria-pressed="true">Stockholm</button></li>
+          </ul>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section id="work" class="wrap" aria-labelledby="work-h">
+    <div class="head">
+      <h2 id="work-h" class="rise">Experience</h2>    </div>
+
+    <div class="stopwork rise">
+      <div class="place"><h3>Amsterdam</h3><p>Aug 2024 - Oct 2026</p></div>
+      <div>
+        <div class="role">
+          <h4>IT Support Engineer</h4>
+          <p class="co">Vastint</p>
+          <ul>
+            <li>Resolved 2nd and 3rd line incidents across hardware, software, endpoints, networks and Microsoft 365 for 240-280 employees and hundreds of guest users in 10 offices and 13 entities.</li>
+            <li>Administered Teams, SharePoint Online, OneDrive, Exchange Online and Copilot, and was a key contact for Microsoft 365 governance.</li>
+            <li>Ran the identity lifecycle in Entra ID: onboarding, offboarding, licensing, permissions and access.</li>
+            <li>Set up laptops through Intune and Autopilot so they arrived ready to use, with Defender and compliance policies already on.</li>
+            <li>Helped move old file shares into SharePoint, and got the offices working to the same IT processes.</li>
+            <li>Managed licensing, procurement, renewals and vendors, and kept IT documentation current.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="stopwork rise">
+      <div class="place"><h3>Dublin</h3><p>Apr 2022 - Aug 2024</p></div>
+      <div>
+        <div class="role">
+          <h4>Data Center Engineer</h4>
+          <p class="co">Wipro · Jul 2023 - Aug 2024</p>
+          <ul>
+            <li>Primary contact for the office UPS replacement: coordinated electrical and infrastructure vendors, ran the controlled shutdown and restart, then tested every system.</li>
+            <li>Audited the server room end to end and brought configurations, hardware specifications and records up to date.</li>
+          </ul>
+        </div>
+        <div class="role">
+          <h4>Data Center Technician</h4>
+          <p class="co">Amazon Web Services · Apr 2022 - Jul 2023</p>
+          <ul>
+            <li>Transferred to Data Center Operations for six months to clear a large media-ticket backlog and improve the team's metrics.</li>
+            <li>Trained colleagues as Media Auditors in secure media destruction, equipment operation and ticket triage.</li>
+            <li>Supported rack migrations, diagnosed and repaired hardware faults, and decommissioned storage media to sanitisation standards.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="stopwork rise">
+      <div class="place"><h3>Mayo</h3><p>Jan 2016 - Apr 2022</p></div>
+      <div>
+        <div class="role">
+          <h4>Senior Qualification Specialist</h4>
+          <p class="co">TELUS Digital AI Data Solutions</p>
+          <ul>
+            <li>The team's first and most senior member: onboarded and trained new staff and built the training materials.</li>
+            <li>Went through project data and performance numbers to find problems, then changed how we worked to fix them.</li>
+            <li>I was the person others came to with questions, and the team's link to the rest of the business.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="stopwork rise">
+      <div class="place"><h3>Sligo and Dublin</h3><p>2013 - 2023</p></div>
+      <div>
+        <div class="role">
+          <h4>BSc (Hons) Software Development, 2.1</h4>
+          <p class="co">Atlantic Technological University, Sligo · 2013 - 2016</p>
+        </div>
+        <div class="role">
+          <h4>Professional Diploma in Cybersecurity, Distinction</h4>
+          <p class="co">University College Dublin · 2023</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="field">
+    <section id="projects" class="wrap" aria-labelledby="proj-h">
+      <div class="head">
+        <h2 id="proj-h" class="rise">Things I've built</h2>
+        <p class="rise">Two apps I built and still run myself. Both publish themselves from GitHub, so updates go live without me doing anything.</p>
+      </div>
+
+      <article class="proj">
+        <figure class="shots rise">
+          <img src="img/sparplan.jpg" width="1440" height="900" alt="Sparplan overview: the EU 1-7 risk scale and funds grouped by when you need the money" loading="lazy">
+          <img class="second" src="img/sparplan-map.jpg" width="1440" height="900" alt="Sparplan risk map: yearly swings plotted against average return for every tracked fund and share" loading="lazy">
+          <figcaption>Sparplan's overview and risk map, as they look today.</figcaption>
+        </figure>
+        <div>
+          <h3 class="rise">Sparplan</h3>
+          <p class="status rise">Live app</p>
+          <p class="rise">Ranks 66 Swedish and worldwide funds and shares by real risk, scored from five years of weekly prices on the EU's official 1-7 scale, in SEK. Lump-sum and monthly-saving planners, a watchlist and saved plans, in Swedish or English.</p>
+          <p class="rise">It installs like an app and works offline. A GitHub Actions job refreshes the market data every weekday evening and publishes it automatically.</p>
+          <p class="stack rise">JavaScript · PowerShell · GitHub Actions · installable web app</p>
+          <div class="links rise">
+            <a class="btn" href="https://endamcgoldrick.github.io/sparplan/" target="_blank" rel="noopener">Open Sparplan</a>
+            <a class="link" href="https://github.com/endamcgoldrick/sparplan" target="_blank" rel="noopener">Code on GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj flip">
+        <figure class="shots rise">
+          <img src="img/lecheile.jpg" width="1440" height="900" alt="Le Chéile week view with colour-coded calendars and weekly hour goals in the sidebar" loading="lazy">
+          <figcaption>Le Chéile's week view with a demo week loaded.</figcaption>
+        </figure>
+        <div>
+          <h3 class="rise">Le Chéile</h3>
+          <p class="status rise">In development</p>
+          <p class="rise">A calendar for two people: a private calendar each, plus a shared one you both edit. Google sign-in, live sync, invites by a 6-character code, and each other's busy times without the details.</p>
+          <p class="rise">It warns you when plans clash and can find a time that suits you both. It also suggests time blocks to help you hit weekly goals. It installs on iPhone and Android and keeps working offline.</p>
+          <p class="stack rise">Firebase · Cloud Firestore · Google sign-in · installable web app</p>
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <section id="how" class="wrap" aria-labelledby="how-h">
+    <div class="head">
+      <h2 id="how-h" class="rise">How I work</h2>
+      <p class="rise">Joiners, movers and leavers are a big share of any support queue. This is the checklist I follow for each.</p>
+    </div>
+    <div class="tabs rise" role="tablist" aria-label="Choose a checklist">
+      <button role="tab" id="t0" aria-controls="p0" aria-selected="true">Joiner</button>
+      <button role="tab" id="t1" aria-controls="p1" aria-selected="false" tabindex="-1">Mover</button>
+      <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">Leaver</button>
+    </div>
+    <div class="runbook rise" id="p0" role="tabpanel" aria-labelledby="t0">
+      <div><h3>Someone starts</h3><p class="out">Ready to work on day one.</p></div>
+      <ol>
+        <li><b>Entra ID</b>Create the account and add the right groups, so access follows the role.</li>
+        <li><b>Licensing</b>Assign the Microsoft 365 licence the job needs.</li>
+        <li><b>Autopilot</b>Register the laptop so it sets itself up at first sign-in.</li>
+        <li><b>Intune and Defender</b>Compliance, configuration and security policies apply before any files are opened.</li>
+        <li><b>Teams and SharePoint</b>The team's channels and sites are there on day one.</li>
+      </ol>
+    </div>
+    <div class="runbook" id="p1" role="tabpanel" aria-labelledby="t1" hidden>
+      <div><h3>Someone changes team</h3><p class="out">Access moves with them.</p></div>
+      <ol>
+        <li><b>Entra ID</b>Update department, manager and group membership.</li>
+        <li><b>Teams and SharePoint</b>Add the new team's sites and channels, remove the old ones.</li>
+        <li><b>Licensing</b>Check the licence still fits the work.</li>
+        <li><b>Intune</b>Confirm the device picks up the policies for the new role or office.</li>
+      </ol>
+    </div>
+    <div class="runbook" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+      <div><h3>Someone leaves</h3><p class="out">Access closed the same day, nothing lost.</p></div>
+      <ol>
+        <li><b>Entra ID</b>Block sign-in and revoke active sessions.</li>
+        <li><b>Exchange Online</b>Convert or hand over the mailbox, following company policy.</li>
+        <li><b>OneDrive</b>Pass files to the manager before anything is removed.</li>
+        <li><b>Licensing</b>Release the licences so the company stops paying for them.</li>
+        <li><b>Intune</b>Wipe the device and prepare it for the next person.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="skills" class="wrap" aria-labelledby="skills-h">
+    <div class="head">
+      <h2 id="skills-h" class="rise">Skills and certificates</h2>
+      <p class="rise">What I use every day, plus what I picked up working in data centres.</p>
+    </div>
+    <dl class="skills">
+      <div class="rise"><dt>Microsoft 365</dt><dd>Exchange Online, SharePoint Online, OneDrive, Teams, Microsoft 365 Copilot, governance</dd></div>
+      <div class="rise"><dt>Identity and access</dt><dd>Entra ID, joiners, movers and leavers, licensing, permissions, access management</dd></div>
+      <div class="rise"><dt>Endpoint management</dt><dd>Intune, Windows Autopilot, device provisioning, configuration and compliance policies</dd></div>
+      <div class="rise"><dt>Security</dt><dd>Microsoft Defender, endpoint security policies, access controls, secure media sanitisation</dd></div>
+      <div class="rise"><dt>Infrastructure</dt><dd>Data centre operations, servers and racks, UPS and power maintenance, network troubleshooting</dd></div>
+      <div class="rise"><dt>Service management</dt><dd>2nd and 3rd line support, incidents, ticketing, vendors, IT assets, documentation</dd></div>
+    </dl>
+    <div class="certs rise">
+      <div><b>CompTIA Security+</b><span>Issued April 2024, valid to April 2027</span></div>
+      <div><b>Professional Diploma in Cybersecurity</b><span>University College Dublin, 2023, Distinction</span></div>
+      <div><b>BSc (Hons) Software Development</b><span>Atlantic Technological University, Sligo, 2016, 2.1</span></div>
+    </div>
+  </section>
+
+  <div class="contact" id="contact">
+    <div class="wrap">
+      <h2 class="rise">Hiring in Stockholm? Email me.</h2>
+      <div class="row rise">
+        <p>I'm looking at IT support, Microsoft 365 and endpoint management roles. Email gets the quickest reply.</p>
+        <div class="links">
+          <a class="btn" href="mailto:mcgoldrickenda@gmail.com?subject=Role%20enquiry">mcgoldrickenda@gmail.com</a>
+          <a class="link" href="https://www.linkedin.com/in/enda-mcgoldrick" rel="noopener">LinkedIn</a>
+          <a class="link" href="Enda-McGoldrick-CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
         </div>
       </div>
     </div>
   </div>
-
-  <section class="alt" id="about">
-    <div class="container">
-      <div class="section-head"><h2 class="section-title">About me</h2><span class="ruler" aria-hidden="true"></span></div>
-      <div class="about-grid fade">
-        <div>
-          <p>I’m an IT support engineer with 4+ years in IT infrastructure and support, from hyperscale data centres to 2nd and 3rd line Microsoft 365 administration across multiple European offices.</p>
-          <p>Most recently at Vastint, I handled escalated incidents, provisioned devices through Autopilot and Intune, and managed Entra ID identities and licensing for joiners, movers and leavers. Before that I worked in data centres at Wipro and Amazon Web Services in Dublin.</p>
-          <p>I like standardising processes, writing documentation the next person can actually use, and clearing backlogs.</p>
-        </div>
-        <ul class="facts">
-          <li><b>Experience</b><span>4+ years in IT</span></li>
-          <li><b>Focus</b><span>Microsoft 365 and endpoints</span></li>
-          <li><b>Looking for</b><span>Roles in Stockholm</span></li>
-          <li><b>Education</b><span>BSc Software Development</span></li>
-          <li><b>Certification</b><span>Cybersecurity diploma (UCD)</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="container">
-      <div class="section-head"><h2 class="section-title">Skills</h2><span class="ruler" aria-hidden="true"></span><p class="section-sub">Tools and areas I work with.</p></div>
-      <div class="skills">
-        <div class="card fade"><h3>Microsoft 365</h3><ul class="tags"><li>Exchange Online</li><li>SharePoint Online</li><li>OneDrive</li><li>Teams</li><li>Copilot</li><li>M365 governance</li></ul></div>
-        <div class="card fade"><h3>Identity and access</h3><ul class="tags"><li>Entra ID</li><li>Joiners, movers, leavers</li><li>Licensing</li><li>Permissions</li></ul></div>
-        <div class="card fade"><h3>Endpoint management</h3><ul class="tags"><li>Intune</li><li>Autopilot</li><li>Device provisioning</li><li>Compliance policies</li></ul></div>
-        <div class="card fade"><h3>Security</h3><ul class="tags"><li>Microsoft Defender</li><li>Endpoint security</li><li>Access controls</li><li>Media sanitisation</li></ul></div>
-        <div class="card fade"><h3>Infrastructure</h3><ul class="tags"><li>Data centre operations</li><li>Servers and racks</li><li>UPS and power</li><li>Networking</li></ul></div>
-        <div class="card fade"><h3>Service management</h3><ul class="tags"><li>2nd/3rd line support</li><li>Incident management</li><li>Ticketing</li><li>Vendors</li><li>IT assets</li><li>Documentation</li></ul></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="alt" id="experience">
-    <div class="container">
-      <div class="section-head"><h2 class="section-title">Experience</h2><span class="ruler" aria-hidden="true"></span><p class="section-sub">Most recent first.</p></div>
-      <div class="timeline">
-        <div class="job fade">
-          <p class="date">Aug 2024 – Oct 2026</p>
-          <h3>IT Support Engineer</h3>
-          <p class="co">Vastint · Amsterdam, Netherlands</p>
-          <ul>
-            <li>Resolved escalated 2nd/3rd line incidents across hardware, software, network, endpoints and Microsoft 365 for multiple European offices.</li>
-            <li>Provisioned devices via Autopilot and Intune with Defender and compliance policies.</li>
-            <li>Managed Entra ID identities, licensing and permissions through standard joiner, mover and leaver processes.</li>
-            <li>Supported the move from legacy file shares to SharePoint Online and OneDrive.</li>
-            <li>Managed licensing, renewals and vendors; key contact for Microsoft 365 and Copilot governance.</li>
-          </ul>
-        </div>
-        <div class="job fade">
-          <p class="date">Jul 2023 – Aug 2024</p>
-          <h3>Data Center Engineer</h3>
-          <p class="co">Wipro · Dublin, Ireland</p>
-          <ul>
-            <li>Delivered a safe UPS replacement as the Dublin office’s primary contact, including shutdown, restart and validation of IT systems.</li>
-            <li>Audited the server room and updated technical documentation.</li>
-          </ul>
-        </div>
-        <div class="job fade">
-          <p class="date">Apr 2022 – Jul 2023</p>
-          <h3>Data Center Technician</h3>
-          <p class="co">Amazon Web Services · Dublin, Ireland</p>
-          <ul>
-            <li>Cut a significant media-ticket backlog during a six-month secondment to Data Center Operations.</li>
-            <li>Trained team members as Media Auditors in secure media destruction and ticket triage.</li>
-            <li>Supported rack migrations and diagnosed and repaired hardware faults.</li>
-          </ul>
-        </div>
-        <div class="job fade">
-          <p class="date">Jan 2016 – Apr 2022</p>
-          <h3>Senior Qualification Specialist</h3>
-          <p class="co">TELUS Digital AI Data Solutions · Mayo, Ireland</p>
-          <ul>
-            <li>The team’s first and most senior member: trained new staff and built training materials.</li>
-            <li>Drove process improvements as subject matter expert using project data and metrics.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <div class="section-head"><h2 class="section-title">Projects</h2><span class="ruler" aria-hidden="true"></span><p class="section-sub">Apps I’ve built and shipped, then highlights from work.</p></div>
-      <h3 class="sub-h">Things I’ve built</h3>
-      <div class="projects builds">
-        <article class="card project build fade">
-          <p class="where">Live app · Personal project</p>
-          <h3>Sparplan</h3>
-          <p>Ranks 66 Swedish and worldwide funds and shares by real risk, scored from five years of weekly prices on the EU’s official 1–7 risk scale, in SEK. Includes a lump-sum planner, a monthly-saving planner, a watchlist and saved plans, in Swedish or English.</p>
-          <p>It installs like an app and works offline. A GitHub Actions job refreshes the market data every weekday evening and publishes it automatically.</p>
-          <ul class="tags"><li>JavaScript</li><li>PowerShell</li><li>GitHub Actions</li><li>PWA</li></ul>
-          <div class="links"><a href="https://endamcgoldrick.github.io/sparplan/" target="_blank" rel="noopener">Open the app →</a><a href="https://github.com/endamcgoldrick/sparplan" target="_blank" rel="noopener">Code on GitHub →</a></div>
-        </article>
-        <article class="card project build fade">
-          <p class="where">In development · Personal project</p>
-          <h3>Le Chéile</h3>
-          <p>A calendar for two people: your own private calendar plus a shared one you both edit. Google sign-in, live sync, invite by a 6-character code, and each other’s busy times shown without revealing details.</p>
-          <p>Flags clashes, finds a time that suits you both, and suggests blocks toward weekly goals. Installs on iPhone and Android, works offline, and deploys from GitHub to Firebase automatically.</p>
-          <ul class="tags"><li>Firebase</li><li>Cloud Firestore</li><li>Google sign-in</li><li>PWA</li></ul>
-        </article>
-      </div>
-      <h3 class="sub-h">Highlights from work</h3>
-      <div class="projects work">
-        <article class="card project fade">
-          <p class="where">Vastint</p>
-          <h3>Laptops that arrive ready</h3>
-          <p>Provisioning new starters’ laptops through Windows Autopilot and Intune, with Defender and compliance policies applied before first use.</p>
-          <ul class="tags"><li>Autopilot</li><li>Intune</li><li>Defender</li></ul>
-        </article>
-        <article class="card project fade">
-          <p class="where">Vastint</p>
-          <h3>Moving off legacy file shares</h3>
-          <p>Supported the move to SharePoint Online and OneDrive, and helped bring IT documentation to one standard across the offices.</p>
-          <ul class="tags"><li>SharePoint</li><li>OneDrive</li><li>Documentation</li></ul>
-        </article>
-        <article class="card project fade">
-          <p class="where">Wipro, Dublin</p>
-          <h3>Office UPS replacement</h3>
-          <p>Coordinated electrical and infrastructure vendors as primary contact, ran the controlled shutdown and restart, and validated every IT system afterwards.</p>
-          <ul class="tags"><li>Infrastructure</li><li>Vendors</li><li>Power</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="alt" id="education">
-    <div class="container">
-      <div class="section-head"><h2 class="section-title">Education</h2><span class="ruler" aria-hidden="true"></span></div>
-      <div class="edu">
-        <article class="card fade"><h3>Professional Diploma in Cybersecurity</h3><p>University College Dublin · 2023 · Distinction</p></article>
-        <article class="card fade"><h3>BSc (Hons) Software Development</h3><p>Atlantic Technological University, Sligo · 2016 · 2.1</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <div class="contact-box fade">
-        <div>
-          <h2>Get in touch</h2>
-          <p>Hiring for IT support, Microsoft 365 or endpoint management? I’d love to hear from you.</p>
-          <a class="mail" href="mailto:mcgoldrickenda@gmail.com?subject=Role%20enquiry">mcgoldrickenda@gmail.com</a>
-        </div>
-        <div class="buttons">
-          <a class="btn btn-primary" href="mailto:mcgoldrickenda@gmail.com?subject=Role%20enquiry">Email me</a>
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/enda-mcgoldrick" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer>
-  <div class="foot-art" aria-hidden="true"><img class="linework" src="linework.png" width="1400" height="350" alt=""></div>
-  <div class="foot-line"><div class="container"><span>© 2026 Enda McGoldrick</span><a href="#top">Back to top ↑</a></div></div>
+  <div class="art" aria-hidden="true"><img src="img/linework.png" width="1400" height="350" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <p class="name" aria-hidden="true">Enda McGoldrick</p>
+    <div class="small"><span>© 2026 Enda McGoldrick</span><a href="#top">Back to top</a></div>
+  </div>
 </footer>
 
 <script>
 (function(){
-  var els=[].slice.call(document.querySelectorAll('.fade'));
-  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* route: each stop shows what happened there */
+  var stops=[
+    ['2013 - 2016','Sligo: BSc (Hons) Software Development','Atlantic Technological University, 2.1.'],
+    ['2016 - 2022','Mayo: Senior Qualification Specialist, TELUS Digital','First and most senior member of the team; trained every new starter.'],
+    ['2022 - 2024','Dublin: data centres at AWS and Wipro','Cleared an AWS media-ticket backlog, then ran the office UPS replacement at Wipro. UCD cybersecurity diploma, Distinction.'],
+    ['2024 - 2026','Amsterdam: IT Support Engineer, Vastint','Microsoft 365, Intune and Entra ID for 240-280 people in 10 offices across Europe.'],
+    ['Next','Stockholm: IT support and Microsoft 365 roles','I\'m moving there now. I\'m an EU citizen, so I don\'t need a visa or work permit.']
+  ];
+  var out=document.getElementById('readout'), dots=[].slice.call(document.querySelectorAll('.stop')), btns=[].slice.call(document.querySelectorAll('.stoplist button'));
+  function show(i){
+    var s=stops[i];
+    out.innerHTML='<span class="yrs"></span><span class="what"></span><span class="note"></span>';
+    out.children[0].textContent=s[0]; out.children[1].textContent=s[1]; out.children[2].textContent=s[2];
+    dots.forEach(function(d){d.classList.toggle('on',+d.dataset.i===i);});
+    btns.forEach(function(b){b.setAttribute('aria-pressed',+b.dataset.i===i?'true':'false');});
+  }
+  dots.forEach(function(d){
+    d.addEventListener('click',function(){show(+d.dataset.i);});
+    d.addEventListener('mouseenter',function(){show(+d.dataset.i);});
+    d.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(+d.dataset.i);}});
+  });
+  btns.forEach(function(b){b.addEventListener('click',function(){show(+b.dataset.i);});});
+  show(4);
+  var line=document.querySelector('.route .line');
+  line.style.setProperty('--len',Math.ceil(line.getTotalLength()));
+
+  /* checklist tabs */
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  function sel(t,focus){tabs.forEach(function(b){var on=b===t,p=document.getElementById(b.getAttribute('aria-controls'));b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;p.hidden=!on;if(on)p.classList.add('in');});if(focus)t.focus();}
+  tabs.forEach(function(b,i){
+    b.addEventListener('click',function(){sel(b);});
+    b.addEventListener('keydown',function(e){var n=e.key==='ArrowRight'?tabs[(i+1)%3]:e.key==='ArrowLeft'?tabs[(i+2)%3]:null;if(n){e.preventDefault();sel(n,true);}});
+  });
+
+  /* staggered entrances, once per element */
+  var els=[].slice.call(document.querySelectorAll('.rise, .route'));
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('main > *, section').forEach(function(sec){sec.querySelectorAll(':scope .rise').forEach(function(n,i){n.style.setProperty('--d',Math.min(i*80,320)+'ms');});});
   els.forEach(function(e){io.observe(e);});
 })();
 </script>
