@@ -23,7 +23,7 @@
 /* Stockholm: pale cool ground, Baltic navy ink and field, flag yellow on actions and the next stop only. */
 :root{
   --ground:#eef1f0; --step:#e2e7e6; --ink:#0b1b2b; --soft:#3c4b5a;
-  --field:#0b1b2b; --on-field:#eef1f0; --on-field-soft:#b4c0cb;
+  --field:var(--ground); --on-field:var(--ink); --on-field-soft:var(--soft);
   --accent:#fecc02; --on-accent:#0b1b2b;
   --font:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
   --m:clamp(20px,4vw,56px); --gap:clamp(120px,14vw,200px);
@@ -32,7 +32,7 @@
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --ground:#0f1720; --step:#16212c; --ink:#e8edf1; --soft:#a9b6c2;
-  --field:#e8edf1; --on-field:#0b1b2b; --on-field-soft:#3c4b5a; color-scheme:dark}}
+  color-scheme:dark}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--ground);color:var(--ink);font:400 18px/1.55 var(--font);-webkit-font-smoothing:antialiased;overflow-x:clip}
@@ -118,7 +118,7 @@ section{padding-top:var(--gap)}
 @media (max-width:900px){.stopwork{grid-template-columns:1fr}}
 
 /* projects: a full field of navy */
-.field{background:var(--field);color:var(--on-field);margin-top:var(--gap);padding-block:var(--gap)}
+.field{background:var(--field);color:var(--on-field);margin-top:var(--gap)}
 .field section{padding-top:0}
 .field .head p,.field .muted{color:var(--on-field-soft)}
 .proj{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,80px);align-items:start}
