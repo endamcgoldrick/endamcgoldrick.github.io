@@ -143,6 +143,8 @@ section{padding-top:var(--gap)}
 .runbook[hidden]{display:none}
 .runbook{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,80px)}
 .runbook h3{font-size:clamp(2rem,3.6vw,3.2rem)}
+.runbook .where{margin-top:12px;color:var(--soft);font-size:17px}
+.runbook .start{margin-top:14px;font-size:18px;max-width:34ch}
 .runbook .out{margin-top:14px;font-size:20px;font-weight:700}
 .runbook ol{padding-left:28px;font-size:19px}
 .runbook li{padding:12px 0 12px 6px}
@@ -201,7 +203,7 @@ footer .small{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px
     <nav aria-label="Sections">
       <a href="#work">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#how">How I work</a>
+      <a href="#how">Problems solved</a>
       <a href="#skills">Skills</a>
     </nav>
     <a class="btn small" href="#contact">Contact</a>
@@ -379,41 +381,57 @@ footer .small{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px
 
   <section id="how" class="wrap" aria-labelledby="how-h">
     <div class="head">
-      <h2 id="how-h" class="rise">How I work</h2>
-      <p class="rise">Joiners, movers and leavers are a big share of any support queue. This is the checklist I follow for each.</p>
+      <h2 id="how-h" class="rise">Problems I've solved</h2>
+      <p class="rise">Five real situations from four jobs, and what I did about each.</p>
     </div>
-    <div class="tabs rise" role="tablist" aria-label="Choose a checklist">
-      <button role="tab" id="t0" aria-controls="p0" aria-selected="true">Joiner</button>
-      <button role="tab" id="t1" aria-controls="p1" aria-selected="false" tabindex="-1">Mover</button>
-      <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">Leaver</button>
+    <div class="tabs rise" role="tablist" aria-label="Choose a problem">
+      <button role="tab" id="t0" aria-controls="p0" aria-selected="true">Phishing alert</button>
+      <button role="tab" id="t1" aria-controls="p1" aria-selected="false" tabindex="-1">13 entities, 13 setups</button>
+      <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">Server room shutdown</button>
+      <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">Ticket backlog</button>
+      <button role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1">Failing exams</button>
     </div>
     <div class="runbook rise" id="p0" role="tabpanel" aria-labelledby="t0">
-      <div><h3>Someone starts</h3><p class="out">Ready to work on day one.</p></div>
+      <div><h3>A phishing alert</h3><p class="where">Vastint · Microsoft Defender</p><p class="out">Account secured and the cause fixed, not just the alert closed.</p></div>
       <ol>
-        <li><b>Entra ID</b>Create the account and add the right groups, so access follows the role.</li>
-        <li><b>Licensing</b>Assign the Microsoft 365 licence the job needs.</li>
-        <li><b>Autopilot</b>Register the laptop so it sets itself up at first sign-in.</li>
-        <li><b>Intune and Defender</b>Compliance, configuration and security policies apply before any files are opened.</li>
-        <li><b>Teams and SharePoint</b>The team's channels and sites are there on day one.</li>
+        <li><b>Triage</b>Picked up the Defender alert and worked out which user and device it affected.</li>
+        <li><b>Talk to the user</b>Followed up with them to find out what they had clicked or entered.</li>
+        <li><b>Contain</b>Reset their credentials where the phishing attempt could have exposed them.</li>
+        <li><b>Fix the cause</b>Updated the out-of-date software behind the alert, so it wouldn't come back.</li>
       </ol>
     </div>
     <div class="runbook" id="p1" role="tabpanel" aria-labelledby="t1" hidden>
-      <div><h3>Someone changes team</h3><p class="out">Access moves with them.</p></div>
+      <div><h3>13 entities, 13 different setups</h3><p class="where">Vastint · with the IT team</p><p class="start">Every entity had its own external IT vendor, no ticketing system, its own software and no onboarding checklists.</p><p class="out">Support that runs the same way in every office.</p></div>
       <ol>
-        <li><b>Entra ID</b>Update department, manager and group membership.</li>
-        <li><b>Teams and SharePoint</b>Add the new team's sites and channels, remove the old ones.</li>
-        <li><b>Licensing</b>Check the licence still fits the work.</li>
-        <li><b>Intune</b>Confirm the device picks up the policies for the new role or office.</li>
+        <li><b>Ticketing</b>Rolled out a shared ticketing system, so every request is logged and tracked in one place.</li>
+        <li><b>Checklists</b>Brought in onboarding and offboarding checklists, so joiners and leavers are handled the same way everywhere.</li>
+        <li><b>Software</b>Moved the offices onto common software instead of a different tool in each.</li>
+        <li><b>Vendors</b>Documented the processes the external vendors follow.</li>
       </ol>
     </div>
     <div class="runbook" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
-      <div><h3>Someone leaves</h3><p class="out">Access closed the same day, nothing lost.</p></div>
+      <div><h3>Powering down a live server room</h3><p class="where">Wipro · office UPS replacement</p><p class="out">Every system tested and back up after the work.</p></div>
       <ol>
-        <li><b>Entra ID</b>Block sign-in and revoke active sessions.</li>
-        <li><b>Exchange Online</b>Convert or hand over the mailbox, following company policy.</li>
-        <li><b>OneDrive</b>Pass files to the manager before anything is removed.</li>
-        <li><b>Licensing</b>Release the licences so the company stops paying for them.</li>
-        <li><b>Intune</b>Wipe the device and prepare it for the next person.</li>
+        <li><b>Plan</b>Joined the technical bridge calls as the office's primary on-site contact, alongside the electrical and infrastructure vendors.</li>
+        <li><b>Access</b>Managed the vendors' access to the server room.</li>
+        <li><b>Shut down</b>Ran the controlled shutdown of the IT equipment.</li>
+        <li><b>Restart and test</b>Brought everything back up and tested every system before signing off.</li>
+      </ol>
+    </div>
+    <div class="runbook" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+      <div><h3>A backlog of media tickets</h3><p class="where">Amazon Web Services · six-month transfer to Data Center Operations</p><p class="out">Backlog cleared in about four months.</p></div>
+      <ol>
+        <li><b>Step in</b>Transferred to Data Center Operations for six months to work through the backlog.</li>
+        <li><b>Train</b>Trained more than 20 colleagues as Media Auditors in secure media destruction, equipment operation and ticket triage.</li>
+        <li><b>Clear it</b>Worked the queue down until it was cleared, about four months in.</li>
+      </ol>
+    </div>
+    <div class="runbook" id="p4" role="tabpanel" aria-labelledby="t4" hidden>
+      <div><h3>Half the candidates failing</h3><p class="where">TELUS Digital · client qualification exams</p><p class="out">Pass rates up from around 50% to 80% or higher on most projects.</p></div>
+      <ol>
+        <li><b>Find the pattern</b>Analysed exam results to see which questions and topics candidates were failing on.</li>
+        <li><b>Report</b>Built reports showing the team where to focus training.</li>
+        <li><b>Fix the material</b>Reviewed the training materials and updated them where candidates kept falling down.</li>
       </ol>
     </div>
   </section>
@@ -495,7 +513,7 @@ footer .small{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px
   function sel(t,focus){tabs.forEach(function(b){var on=b===t,p=document.getElementById(b.getAttribute('aria-controls'));b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;p.hidden=!on;if(on)p.classList.add('in');});if(focus)t.focus();}
   tabs.forEach(function(b,i){
     b.addEventListener('click',function(){sel(b);});
-    b.addEventListener('keydown',function(e){var n=e.key==='ArrowRight'?tabs[(i+1)%3]:e.key==='ArrowLeft'?tabs[(i+2)%3]:null;if(n){e.preventDefault();sel(n,true);}});
+    b.addEventListener('keydown',function(e){var n=e.key==='ArrowRight'?tabs[(i+1)%tabs.length]:e.key==='ArrowLeft'?tabs[(i+tabs.length-1)%tabs.length]:null;if(n){e.preventDefault();sel(n,true);}});
   });
 
   /* staggered entrances, once per element */
