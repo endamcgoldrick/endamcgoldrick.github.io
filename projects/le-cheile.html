@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Chéile · Enda McGoldrick</title>
+<meta name="description" content="Le Chéile is a calendar for two people: a private calendar each and a shared one. Built on Firebase as an installable web app.">
+<link rel="canonical" href="https://endamcgoldrick.github.io/projects/le-cheile.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b1b2b'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23fecc02'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+<a class="skip" href="#top">Skip to content</a>
+<header class="bar">
+  <div class="wrap">
+    <a class="wordmark" href="../">Enda McGoldrick</a>
+    <nav aria-label="Site">
+      <a class="opt" href="../#projects">All projects</a>
+      <a class="cv" href="../Enda-McGoldrick-CV.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="btn small" href="../#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="top wrap">
+    <h1>Le Chéile</h1>
+    <div class="grid">
+      <p class="lede">A calendar for two people: a private one each, and a shared one you both edit.</p>
+      <dl class="meta">
+        <div><dt>Personal project</dt><dd>Built for me and one other person to use every day</dd></div>
+        <div><dt>In use</dt><dd>Live and still changing</dd></div>
+        <div><dt>Stack</dt><dd>JavaScript, Firebase Authentication, Cloud Firestore, Firebase Hosting, GitHub Actions</dd></div>
+        <div><dt>Code</dt><dd>In a private repository</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <section class="wrap" aria-labelledby="problem-h">
+    <div class="head">
+      <h2 id="problem-h">The problem</h2>
+      <div class="prose">
+        <p>Two people share a life but not every plan. I wanted a calendar where each of us keeps our own, there is one shared calendar we both edit, and we can see when the other is busy without seeing why.</p>
+        <p>It had to work on both our phones, open fast, and be private to the two of us.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="built-h">
+    <div class="head">
+      <h2 id="built-h">What I built</h2>
+      <div class="prose">
+        <ul>
+          <li>Google sign-in, limited to two accounts.</li>
+          <li>A private calendar each, and a shared calendar that either person can edit.</li>
+          <li>Linking by a 6-character invite code that expires after 7 days.</li>
+          <li>Busy times without the details, unless you choose to show titles.</li>
+          <li>A warning when plans clash, and a "find a time together" view.</li>
+          <li>Weekly hour goals with suggested time blocks.</li>
+          <li>Read-only Google Calendar sync, with permission, and a saved copy so the agenda shows straight away.</li>
+          <li>Schedule, Day, Week and Month views with swipe on a phone, and tick boxes to mark events done.</li>
+          <li>It installs on a phone and keeps working offline.</li>
+        </ul>
+      </div>
+    </div>
+    <figure class="shot">
+      <img src="../img/lecheile.jpg" width="1440" height="900" alt="Le Chéile week view with colour-coded calendars and weekly hour goals in the sidebar" loading="lazy">
+      <figcaption>The week view with a demo week loaded.</figcaption>
+    </figure>
+  </section>
+
+  <section class="wrap" aria-labelledby="how-h">
+    <div class="head">
+      <h2 id="how-h">How I built it</h2>
+      <div class="prose">
+        <p>It is plain JavaScript with no framework and no build step. Firebase handles sign-in, the database and hosting. Every push to the main branch is published by a GitHub Actions workflow. It checks the code before publishing and the live site's security headers afterwards.</p>
+        <p>Privacy is enforced in the database, not only on screen. The security rules allow only the two accounts, keep each private calendar readable by its owner alone, and let a shared event be read and edited only by its two members.</p>
+        <div class="todo"><b>TODO (Enda):</b> once the Phase 1 branch is merged and published, add what it brings: tests for the security rules, a reminder per event, repeating-event edits (only this one or all), calendar file import and export, and who added each shared event.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="diff-h">
+    <div class="head">
+      <h2 id="diff-h">What I'd do differently</h2>
+      <div class="prose">
+        <ul>
+          <li>I would design the phone layout first. My first version was a desktop calendar squeezed onto a phone, and it felt cramped on a real handset. Schedule, Month and swipe came later and fixed it.</li>
+          <li>I would set the page's cache headers on day one. For a while a phone kept showing an old copy of the page next to the new code, which looked like a bug in the new views.</li>
+          <li>I would check the platform limits before promising a feature. Reminders when the app is closed need a scheduled server job, which Firebase only runs on a paid plan. I chose not to pay for it, so reminders work while the app is open or in the background.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="next">
+    <div class="wrap">
+      <h2>See the other projects</h2>
+      <div class="row">
+        <a class="btn" href="../#projects">All projects</a>
+        <a class="link" href="../Enda-McGoldrick-CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        <a class="link" href="mailto:mcgoldrickenda@gmail.com?subject=Role%20enquiry">Email me</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="small"><span>© 2026 Enda McGoldrick</span><a href="../">Back to home</a></div>
+  </div>
+</footer>
+</body>
+</html>

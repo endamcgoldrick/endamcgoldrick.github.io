@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Graph onboarding scripts · Enda McGoldrick</title>
+<meta name="description" content="PowerShell scripts that create, licence and offboard Microsoft 365 users through Microsoft Graph, with -WhatIf, logging and tests.">
+<link rel="canonical" href="https://endamcgoldrick.github.io/projects/graph-onboarding.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b1b2b'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23fecc02'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+<a class="skip" href="#top">Skip to content</a>
+<header class="bar">
+  <div class="wrap">
+    <a class="wordmark" href="../">Enda McGoldrick</a>
+    <nav aria-label="Site">
+      <a class="opt" href="../#projects">All projects</a>
+      <a class="cv" href="../Enda-McGoldrick-CV.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="btn small" href="../#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="top wrap">
+    <h1>Graph onboarding scripts</h1>
+    <div class="grid">
+      <p class="lede">PowerShell for joiners and leavers: create the user, licence them, and undo it all cleanly when they go.</p>
+      <dl class="meta">
+        <div><dt>Lab</dt><dd>Written for a test tenant, with <code>-WhatIf</code> support throughout</dd></div>
+        <div><dt>In progress</dt><dd>The scripts and tests are written. I still have to run them against a tenant.</dd></div>
+        <div><dt>Tools</dt><dd>PowerShell 7, Microsoft Graph PowerShell SDK, Pester, PSScriptAnalyzer</dd></div>
+        <div><dt>Code</dt><dd>Repository link to follow</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <section class="wrap" aria-labelledby="problem-h">
+    <div class="head">
+      <h2 id="problem-h">The problem</h2>
+      <div class="prose">
+        <p>Joiners and leavers follow the same steps every time. In: create the account, set the usage location, assign a licence, add the groups. Out: block sign-in, end the sessions, remove groups and licences. Done by hand, a step gets missed, and a missed step on the way out is a leaver who still has access.</p>
+        <p>I did this work in my last job. I wanted to write the same process as a script that can be checked before it runs and leaves a record of what it did.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="built-h">
+    <div class="head">
+      <h2 id="built-h">What I built</h2>
+      <div class="prose">
+        <p>Four scripts:</p>
+        <ul>
+          <li><code>New-OnboardUser.ps1</code> reads a CSV, creates each user, sets the usage location, assigns a licence by its SKU part number and adds the group memberships.</li>
+          <li><code>Invoke-OffboardUser.ps1</code> blocks sign-in, revokes sessions, removes group memberships and licences, and records what it did.</li>
+          <li><code>Get-InactiveUsers.ps1</code> writes a CSV of accounts that have not signed in for a set number of days.</li>
+          <li><code>Get-MfaStatusReport.ps1</code> writes a CSV showing who has MFA methods registered.</li>
+        </ul>
+        <div class="todo"><b>TODO (Enda):</b> link the repository folder, and check this list still matches the scripts when you publish.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="how-h">
+    <div class="head">
+      <h2 id="how-h">How I built it</h2>
+      <div class="prose">
+        <ul>
+          <li>Sign-in is interactive only (<code>Connect-MgGraph</code>). There are no stored secrets.</li>
+          <li>Each script asks for the smallest set of Graph permissions it needs. The README has a table of them.</li>
+          <li>Every script that changes something supports <code>-WhatIf</code>, so you can see what it would do first.</li>
+          <li>Passwords are never printed or written to a log.</li>
+          <li>The logic that doesn't need a tenant is covered by Pester tests, and the code is checked with PSScriptAnalyzer.</li>
+          <li>The sample CSV uses obviously fake people.</li>
+        </ul>
+        <div class="todo"><b>TODO (Enda):</b> after running it in a test tenant, add what you ran, what the log looked like (without real names) and anything the Graph SDK did that surprised you.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="shots-h">
+    <div class="head">
+      <h2 id="shots-h">Screenshots</h2>
+      <div class="prose">
+        <div class="todo"><b>TODO (Enda):</b> add a screenshot of a <code>-WhatIf</code> run and of the log file. Use only fake users, and check no tenant name appears.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="diff-h">
+    <div class="head">
+      <h2 id="diff-h">What I'd do differently</h2>
+      <div class="prose">
+        <div class="todo"><b>TODO (Enda):</b> write this after running the scripts. Use what actually went wrong, in your own words.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="next">
+    <div class="wrap">
+      <h2>See the other projects</h2>
+      <div class="row">
+        <a class="btn" href="../#projects">All projects</a>
+        <a class="link" href="../Enda-McGoldrick-CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        <a class="link" href="mailto:mcgoldrickenda@gmail.com?subject=Role%20enquiry">Email me</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="small"><span>© 2026 Enda McGoldrick</span><a href="../">Back to home</a></div>
+  </div>
+</footer>
+</body>
+</html>

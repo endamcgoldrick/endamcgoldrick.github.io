@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Azure lab in Bicep · Enda McGoldrick</title>
+<meta name="description" content="An Azure lab defined in Bicep: network, a small Windows Server VM, monitoring alerts and backup, with a teardown script and a hybrid identity runbook.">
+<link rel="canonical" href="https://endamcgoldrick.github.io/projects/azure-lab.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b1b2b'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23fecc02'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+<a class="skip" href="#top">Skip to content</a>
+<header class="bar">
+  <div class="wrap">
+    <a class="wordmark" href="../">Enda McGoldrick</a>
+    <nav aria-label="Site">
+      <a class="opt" href="../#projects">All projects</a>
+      <a class="cv" href="../Enda-McGoldrick-CV.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="btn small" href="../#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="top wrap">
+    <h1>Azure lab in Bicep</h1>
+    <div class="grid">
+      <p class="lede">A small Azure lab I can deploy, break and delete in one afternoon, defined in code.</p>
+      <dl class="meta">
+        <div><dt>Lab</dt><dd>Practice environment while I study for the AZ-104 exam</dd></div>
+        <div><dt>In progress</dt><dd>The Bicep files are written and checked. I still have to deploy them and record the results.</dd></div>
+        <div><dt>Tools</dt><dd>Azure, Bicep, Windows Server, Log Analytics, Microsoft Entra Connect</dd></div>
+        <div><dt>Code</dt><dd>Repository link to follow</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <section class="wrap" aria-labelledby="problem-h">
+    <div class="head">
+      <h2 id="problem-h">The problem</h2>
+      <div class="prose">
+        <p>I am working towards the AZ-104 exam. I have not passed it yet. Reading about virtual networks, backup and monitoring is not the same as setting them up and watching them fail.</p>
+        <p>I wanted a lab that is defined in code, so it can be created the same way each time and removed with one command when I am done.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="built-h">
+    <div class="head">
+      <h2 id="built-h">What I built</h2>
+      <div class="prose">
+        <p>Bicep files for:</p>
+        <ul>
+          <li>a resource group and a virtual network,</li>
+          <li>one small Windows Server VM with an auto-shutdown schedule,</li>
+          <li>a Log Analytics workspace with a couple of alert rules,</li>
+          <li>a Recovery Services vault with a backup policy.</li>
+        </ul>
+        <p>Around the Bicep there is a parameters file with placeholders, a cost note, a teardown script, and a written runbook for promoting the server to a domain controller and setting up hybrid identity with Entra.</p>
+        <div class="todo"><b>TODO (Enda):</b> link the finished lab folder, and copy the real cost figure from the cost note once you have seen the bill for a run.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="how-h">
+    <div class="head">
+      <h2 id="how-h">How I built it</h2>
+      <div class="prose">
+        <p>The Bicep is checked with <code>bicep build</code> and the linter. Values that identify a subscription or tenant are placeholders in a parameters file, so none are in the repository.</p>
+        <p>The domain controller and hybrid identity steps are written as a runbook, not as code, because they are done by hand on the server.</p>
+        <div class="todo"><b>TODO (Enda):</b> after deploying it, add which region and VM size you used, what the deployment did and did not do first time, and how long teardown took.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="shots-h">
+    <div class="head">
+      <h2 id="shots-h">Screenshots</h2>
+      <div class="prose">
+        <div class="todo"><b>TODO (Enda):</b> add real screenshots of the deployed resource group and a triggered alert. Remove the subscription ID and tenant name from every image.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="diff-h">
+    <div class="head">
+      <h2 id="diff-h">What I'd do differently</h2>
+      <div class="prose">
+        <div class="todo"><b>TODO (Enda):</b> write this after the lab has been deployed and torn down. Use what actually went wrong, in your own words.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="next">
+    <div class="wrap">
+      <h2>See the other projects</h2>
+      <div class="row">
+        <a class="btn" href="../#projects">All projects</a>
+        <a class="link" href="../Enda-McGoldrick-CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        <a class="link" href="mailto:mcgoldrickenda@gmail.com?subject=Role%20enquiry">Email me</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="small"><span>© 2026 Enda McGoldrick</span><a href="../">Back to home</a></div>
+  </div>
+</footer>
+</body>
+</html>

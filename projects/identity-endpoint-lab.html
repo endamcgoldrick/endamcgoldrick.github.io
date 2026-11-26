@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Identity and endpoint lab · Enda McGoldrick</title>
+<meta name="description" content="A step-by-step lab for a free Microsoft 365 test tenant: Entra ID users and groups, MFA with Conditional Access, and Intune for Windows and macOS.">
+<link rel="canonical" href="https://endamcgoldrick.github.io/projects/identity-endpoint-lab.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b1b2b'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23fecc02'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+<a class="skip" href="#top">Skip to content</a>
+<header class="bar">
+  <div class="wrap">
+    <a class="wordmark" href="../">Enda McGoldrick</a>
+    <nav aria-label="Site">
+      <a class="opt" href="../#projects">All projects</a>
+      <a class="cv" href="../Enda-McGoldrick-CV.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="btn small" href="../#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="top wrap">
+    <h1>Identity and endpoint lab</h1>
+    <div class="grid">
+      <p class="lede">A step-by-step lab for a free Microsoft 365 test tenant: users, MFA and managed Windows and Mac devices.</p>
+      <dl class="meta">
+        <div><dt>Lab</dt><dd>Practice setup in a test tenant, not a production system</dd></div>
+        <div><dt>In progress</dt><dd>The runbook is written. I still have to run it and record the results.</dd></div>
+        <div><dt>Tools</dt><dd>Microsoft Entra ID, Conditional Access, Microsoft Intune</dd></div>
+        <div><dt>Code</dt><dd>Repository link to follow</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <section class="wrap" aria-labelledby="problem-h">
+    <div class="head">
+      <h2 id="problem-h">The problem</h2>
+      <div class="prose">
+        <p>My day job is Entra ID, Intune and Autopilot on a live tenant, where every change affects real people. That is the wrong place to try a setting for the first time or to find out what breaks.</p>
+        <p>I wanted a tenant where nothing depends on the result, set up from an empty start, with the steps written down so I can repeat them and explain them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="built-h">
+    <div class="head">
+      <h2 id="built-h">What I built</h2>
+      <div class="prose">
+        <p>A runbook for a free Microsoft 365 developer or trial tenant. It covers:</p>
+        <ul>
+          <li>Users and groups in Entra ID.</li>
+          <li>MFA through Conditional Access, starting in report-only mode, with a break-glass account excluded so I can't lock myself out.</li>
+          <li>Intune enrolment for Windows and for macOS.</li>
+          <li>A compliance policy, a configuration profile and an app deployment.</li>
+          <li>A test table: what I did, what I expected and what happened.</li>
+        </ul>
+        <div class="todo"><b>TODO (Enda):</b> add the link to the finished runbook folder, and the real tenant type used (developer programme or trial).</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="how-h">
+    <div class="head">
+      <h2 id="how-h">How I built it</h2>
+      <div class="prose">
+        <p>The runbook goes in the order you would do it in a new tenant: identities first, then access rules, then devices. Conditional Access starts in report-only mode, so I can see what a policy would have blocked before it blocks anything.</p>
+        <div class="todo"><b>TODO (Enda):</b> after running it, say what the devices were (for example a Windows VM and a Mac), what enrolled cleanly, and the order that worked.</div>
+        <div class="todo"><b>TODO (Enda):</b> fill in the "what happened" column of the test table in the runbook, and summarise the three most useful results here.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="shots-h">
+    <div class="head">
+      <h2 id="shots-h">Screenshots</h2>
+      <div class="prose">
+        <div class="todo"><b>TODO (Enda):</b> add real screenshots from the tenant (the Conditional Access report-only result, a compliant device in Intune). Remove tenant names, IDs and email addresses before saving them to <code>img/</code>.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="diff-h">
+    <div class="head">
+      <h2 id="diff-h">What I'd do differently</h2>
+      <div class="prose">
+        <div class="todo"><b>TODO (Enda):</b> write this after the lab has been run. Use what actually went wrong or took longer than expected, in your own words.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="next">
+    <div class="wrap">
+      <h2>See the other projects</h2>
+      <div class="row">
+        <a class="btn" href="../#projects">All projects</a>
+        <a class="link" href="../Enda-McGoldrick-CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        <a class="link" href="mailto:mcgoldrickenda@gmail.com?subject=Role%20enquiry">Email me</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="small"><span>© 2026 Enda McGoldrick</span><a href="../">Back to home</a></div>
+  </div>
+</footer>
+</body>
+</html>
