@@ -54,7 +54,9 @@ img{display:block;max-width:100%;height:auto}
 .bar nav{display:flex;gap:28px}
 .bar nav a{text-decoration:none;font-weight:500;color:var(--soft);transition:color .2s}
 .bar nav a:hover{color:var(--ink)}
+.bar .cv{font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;margin-right:-8px}
 @media (max-width:820px){.bar nav{display:none}}
+@media (max-width:420px){.bar .wrap{gap:18px}}
 
 /* buttons: square, one fill */
 .btn{display:inline-flex;align-items:center;min-height:54px;padding:0 26px;font-weight:700;font-size:17px;text-decoration:none;
@@ -135,6 +137,19 @@ section{padding-top:var(--gap)}
 .proj .links{display:flex;flex-wrap:wrap;gap:16px 28px;margin-top:28px;align-items:center}
 @media (max-width:900px){.proj,.proj.flip{grid-template-columns:1fr}.proj.flip .shots{order:0}}
 
+/* labs */
+.labs{margin-top:clamp(80px,9vw,140px)}
+.labs h3{font-size:clamp(2.4rem,5vw,4.4rem)}
+.labs > p{margin-top:14px;max-width:46ch;color:var(--on-field-soft)}
+.lab{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:12px clamp(28px,5vw,80px);align-items:start;margin-top:clamp(36px,4vw,56px)}
+.lab h4{margin:0;font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.lab h4 a{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px;transition:text-underline-offset .2s}
+.lab h4 a:hover{text-underline-offset:12px}
+.lab p{max-width:52ch}
+.lab .status{margin-top:10px;font-weight:700;font-size:17px}
+@media (max-width:900px){.lab{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.lab h4 a{transition:none}}
+
 /* how I work */
 .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
 .tabs button{font:700 18px var(--font);color:var(--ink);background:var(--step);border:0;min-height:48px;padding:0 22px;cursor:pointer;transition:background-color .2s,color .2s}
@@ -163,7 +178,7 @@ section{padding-top:var(--gap)}
 
 /* contact */
 .contact{margin-top:var(--gap);background:var(--accent);color:var(--on-accent);padding-block:clamp(72px,9vw,128px)}
-.contact h2{font-size:clamp(2.6rem,6.4vw,6rem);max-width:14ch}
+.contact h2{font-size:clamp(2rem,6.4vw,6rem);max-width:20ch}
 .contact .row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px clamp(32px,5vw,80px);margin-top:36px;align-items:end}
 .contact p{font-size:20px;max-width:40ch}
 .contact .links{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center}
@@ -174,8 +189,9 @@ section{padding-top:var(--gap)}
 footer .art{overflow:hidden;max-height:200px}
 footer .art img{width:100%;min-width:900px;mix-blend-mode:multiply}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer .art img{filter:invert(1);mix-blend-mode:screen}}
-footer .name{font-weight:800;font-size:clamp(3rem,11.6vw,12rem);letter-spacing:-.06em;line-height:.8;margin:24px 0 0 -.04em;white-space:nowrap}
+footer .name{font-weight:800;font-size:clamp(2rem,11.6vw,12rem);letter-spacing:-.06em;line-height:.8;margin:24px 0 0 -.04em;white-space:nowrap}
 footer .small{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-block:28px;color:var(--soft);font-size:15px}
+footer .small a{display:inline-block;padding-block:8px}
 
 /* motion: content is visible without script */
 .js .rise{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0ms)}
@@ -205,6 +221,7 @@ footer .small{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px
       <a href="#how">Problems solved</a>
       <a href="#skills">Skills</a>
     </nav>
+    <a class="cv" href="Enda-McGoldrick-CV.pdf" target="_blank" rel="noopener">CV</a>
     <a class="btn small" href="#contact">Contact</a>
   </div>
 </header>
@@ -339,7 +356,7 @@ footer .small{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px
     <section id="projects" class="wrap" aria-labelledby="proj-h">
       <div class="head">
         <h2 id="proj-h" class="rise">Things I've built</h2>
-        <p class="rise">Two apps I built and still run myself. Both publish themselves from GitHub, so updates go live without me doing anything.</p>
+        <p class="rise">Two apps I built and still run myself, and three practice labs for Microsoft 365 and Azure that I am working through. The apps publish themselves from GitHub, so updates go live without me doing anything.</p>
       </div>
 
       <article class="proj">
@@ -372,8 +389,28 @@ footer .small{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px
           <p class="rise">A calendar for two people: a private calendar each, plus a shared one you both edit. Google sign-in, live sync, invites by a 6-character code, and each other's busy times without the details.</p>
           <p class="rise">It warns you when plans clash and can find a time that suits you both. It also suggests time blocks to help you hit weekly goals. It installs on iPhone and Android and keeps working offline.</p>
           <p class="stack rise">Firebase · Cloud Firestore · Google sign-in · installable web app</p>
+          <div class="links rise">
+            <a class="link" href="projects/le-cheile.html">Read the case study</a>
+          </div>
         </div>
       </article>
+
+      <div class="labs">
+        <h3 class="rise">Labs</h3>
+        <p class="rise">Set up in test environments, not production. The write-ups say what I did and what went wrong.</p>
+        <article class="lab rise">
+          <h4><a href="projects/identity-endpoint-lab.html">Identity and endpoint lab</a></h4>
+          <div><p>Entra ID users and groups, MFA with Conditional Access, and Intune for Windows and Mac, in a free Microsoft 365 test tenant.</p><p class="status">Lab, in progress</p></div>
+        </article>
+        <article class="lab rise">
+          <h4><a href="projects/graph-onboarding.html">Graph onboarding scripts</a></h4>
+          <div><p>PowerShell that creates, licences and offboards users through Microsoft Graph, with -WhatIf, logging and tests.</p><p class="status">Lab, in progress</p></div>
+        </article>
+        <article class="lab rise">
+          <h4><a href="projects/azure-lab.html">Azure lab in Bicep</a></h4>
+          <div><p>A network, a small Windows Server VM, alerts and backup defined in code, with a hybrid identity runbook. Practice for the AZ-104 exam, which I have not taken yet.</p><p class="status">Lab, in progress</p></div>
+        </article>
+      </div>
     </section>
   </div>
 
